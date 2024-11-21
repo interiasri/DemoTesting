@@ -2,6 +2,7 @@ package FunctionLibrary;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 
@@ -47,10 +48,14 @@ public class OtherFunctions extends AppUtils{
 	}
 	
 	@Test
-	public void googleMission() {
+	public void googleMission() throws IOException {
 		driver.findElement(By.linkText("About")).click();
 		String gmission=driver.findElement(By.xpath("//h1[contains(@class,'glue-headline--fluid-2')]")).getText();
 		System.out.println(gmission);
+		File fi = new File("FileOutput/googleMission.txt");
+		fi.createNewFile();
+		FileWriter  fw = new FileWriter(fi);
+		fw.write(gmission+"\n");
 	}
 
 }
