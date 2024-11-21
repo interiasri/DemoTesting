@@ -2,12 +2,14 @@ package FunctionLibrary;
 
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
 public class OtherFunctions extends AppUtils{
 	
+
 	@Test
 	public void googleSearchTest() throws Throwable {
 		driver.findElement(By.className("gLFyf")).sendKeys("Java Basics");
