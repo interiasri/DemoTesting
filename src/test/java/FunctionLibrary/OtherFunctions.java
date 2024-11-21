@@ -45,5 +45,12 @@ public class OtherFunctions extends AppUtils{
 			}
 		}
 	}
+	
+	@Test
+	public void googleMission() {
+		driver.findElement(By.linkText("About")).click();
+		String gmission=driver.findElement(By.xpath("//h1[contains(@class,'glue-headline--fluid-2')]")).getText();
+		System.out.println(gmission);
+	}
 
 }
