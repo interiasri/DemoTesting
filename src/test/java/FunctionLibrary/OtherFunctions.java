@@ -56,6 +56,8 @@ public class OtherFunctions extends AppUtils{
 		fi.createNewFile();
 		FileWriter  fw = new FileWriter(fi);
 		fw.write(gmission+"\n");
+		fw.close();
 	}
+	
 
 }
