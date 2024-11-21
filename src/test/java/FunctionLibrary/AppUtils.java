@@ -4,13 +4,13 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 public class AppUtils {
 	
 	public static WebDriver driver;
-	@BeforeSuite
+	@BeforeMethod
 	public void launchApp() {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -19,7 +19,7 @@ public class AppUtils {
 		driver.get("https:google.com");
 	}
 	
-	@AfterSuite
+	@AfterMethod
 	public void closeApp() {
 		driver.quit();
 	}

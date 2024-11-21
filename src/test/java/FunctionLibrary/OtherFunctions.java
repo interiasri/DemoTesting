@@ -29,5 +29,21 @@ public class OtherFunctions extends AppUtils{
 		}
 		fw.close();
 	}
+	
+	@Test
+	public void googleSearchAndSelectItem() throws Throwable {
+		driver.findElement(By.className("gLFyf")).sendKeys("Java Basics");
+		Thread.sleep(1000);
+		WebElement listContains=driver.findElement(By.xpath("//ul[@class='G43f7e']"));
+		List<WebElement> listOfItems=listContains.findElements(By.tagName("li"));
+		System.out.println("Total Number of Items: "+listOfItems.size());
+		for(int i=0; i<listOfItems.size(); i++) {
+			String itemName=listOfItems.get(i).getText();
+			if(itemName.equalsIgnoreCase("itemName")) {
+				listOfItems.get(i).click();
+				break;
+			}
+		}
+	}
 
 }

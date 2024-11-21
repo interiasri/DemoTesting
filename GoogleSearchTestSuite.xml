@@ -1,0 +1,7 @@
+<suite name="Google Search Test Suite">
+	<test name="Google Search">
+		<classes>
+			<class name="FunctionLibrary.OtherFunctions"></class>
+		</classes>
+	</test>
+</suite>
